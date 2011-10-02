@@ -13,7 +13,7 @@ OBJECTS = src/error_messages.o \
 .PHONY: all clean test dirs
 
 
-all: lib/libdstruct.a
+all: lib/libmcl.a
 
 dirs:
 	@for d in ${DIRS}; do if [ ! -d $$d ]; then mkdir $$d; fi; done
@@ -23,14 +23,14 @@ clean:
 	@rm -rf ${DIRS}
 	@rm -f test/*.test
 
-test:	lib/libdstruct.a
+test:	lib/libmcl.a
 	${MAKE} -C test ${.MAKEFLAGS}
 
 .SUFFIXES: .cpp .o
 
 .PATH: src
 
-lib/libdstruct.a: dirs ${OBJECTS}
+lib/libmcl.a: dirs ${OBJECTS}
 	${AR} rcs $@ ${OBJECTS}
 
 .cpp.o:

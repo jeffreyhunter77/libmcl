@@ -7,9 +7,9 @@ objects = obj\error_messages.obj \
 tests = test\bin\TestString.exe
 
 
-all: lib\dstruct.lib
+all: lib\mcl.lib
 
-test: lib\dstruct.lib runtests
+test: lib\mcl.lib runtests
 
 runtests: $(tests)
   ! $**  
@@ -19,7 +19,7 @@ clean:
   - @RD /S /Q obj
   - @RD /S /Q test\bin
 
-lib\dstruct.lib: $(objects)
+lib\mcl.lib: $(objects)
   - @MD lib
   LIB /OUT:$@ $**
 
@@ -29,4 +29,4 @@ lib\dstruct.lib: $(objects)
 
 {test\}.cpp{test\bin\}.exe:
   - @MD test\bin
-  $(CC) $(CFLAGS) /Z7 /Fetest\bin\ /Fotest\bin\ /MTd $< /link /NODEFAULTLIB:libcmt.lib /LIBPATH:lib dstruct.lib
+  $(CC) $(CFLAGS) /Z7 /Fetest\bin\ /Fotest\bin\ /MTd $< /link /NODEFAULTLIB:libcmt.lib /LIBPATH:lib mcl.lib

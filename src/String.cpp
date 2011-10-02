@@ -6,11 +6,11 @@
  *
  * An immutable string class implementation.
  */
-#include <String.h>
+#include <mcl/String.h>
 
-#include <hash_functions.h>
-#include <InvalidReferenceCountException.h>
-#include <OutOfMemoryException.h>
+#include <mcl/hash_functions.h>
+#include <mcl/InvalidReferenceCountException.h>
+#include <mcl/OutOfMemoryException.h>
 
 #include <string.h>
 

@@ -3,8 +3,8 @@
 // Copyright (c) 2007-2011, Jeffrey Hunter
 // See the LICENSE file distributed with this work for restrictions.
 
-#include <Exception.h>
-#include <error_messages.h>
+#include <mcl/Exception.h>
+#include <mcl/error_messages.h>
 
 namespace mcl {
   

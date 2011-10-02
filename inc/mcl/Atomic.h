@@ -7,14 +7,14 @@
  * Macros for atomic operations
  */
 
-#include <config.h>
+#include <mcl/config.h>
 
 #if _MCL_ARCH == _MCL_ARCH_X86
 
 #ifdef _MCL_MASM_SYNTAX
-#include <arch/Atomic_i486_masm.h>
+#include <mcl/arch/Atomic_i486_masm.h>
 #else
-#include <arch/Atomic_i486_att.h>
+#include <mcl/arch/Atomic_i486_att.h>
 #endif
 
 #else

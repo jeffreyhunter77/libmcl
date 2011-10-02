@@ -9,8 +9,8 @@
  * An immutable string class implementation.
  */
 
-#include <OutOfBoundsException.h>
-#include <Atomic.h>
+#include <mcl/OutOfBoundsException.h>
+#include <mcl/Atomic.h>
 
 namespace mcl {
 

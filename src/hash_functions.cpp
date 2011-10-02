@@ -5,7 +5,7 @@
  * Hash functions for use with HashMap
  */
 
-#include <hash_functions.h>
+#include <mcl/hash_functions.h>
 
 using namespace mcl;
 
