@@ -244,18 +244,19 @@ void String::assign(const String& str, long offset, long len) {
     release();
   
   // for negative parameters, calculate the real values
+  long strSize = (long)str.size();
   if (offset < 0)
-    offset += str.size();
+    offset += strSize;
   if (len < 0)
-    len += str.size() - offset;
+    len += strSize - offset;
   
   // constrain to boundaries
   if (offset < 0)
     offset = 0;
-  if (offset > str.size())
-    offset = str.size();
-  if (len > str.size() - offset)
-    len = str.size() - offset;
+  if (offset > strSize)
+    offset = strSize;
+  if (len > strSize - offset)
+    len = strSize - offset;
   if (len < 0)
     len = 0;
 
