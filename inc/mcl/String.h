@@ -147,7 +147,7 @@ public:
   void assign(const String& str);
   void assign(const char* str);
   void assign(const String& str, long offset)
-    { assign(str, offset, (offset < 1 ? 0 - offset : str.size() + offset)); }
+    { assign(str, offset, (offset < 0 ? 0 - offset : str.size() + offset)); }
   void assign(const String& str, long offset, long len);
   void assign(const char* str, size_t len);
   void assign(char c, size_t repeat = 1);
