@@ -7,11 +7,11 @@
 
 namespace mcl {
   
-  const char* ERROR_MESSAGES[] {
+  const char* ERROR_MESSAGES[] = {
     "Invalid reference count",
     "Out of memory",
     "Index out of bounds",
     0
-  }
+  };
   
 }
