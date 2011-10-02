@@ -7,7 +7,7 @@
 
 #include <mcl/hash_functions.h>
 
-using namespace mcl;
+namespace mcl {
 
 #define _MCL_STR_HASH_INIT 5381
 
@@ -113,6 +113,7 @@ size_t hash_uint(const unsigned int& i) {
   return (size_t)i;
 }
 
+} // namespace
 
 // Local Variables:
 // mode:C++
