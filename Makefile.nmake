@@ -1,0 +1,32 @@
+CFLAGS = /Iinc /I. /EHsc /DWIN32
+
+objects = obj\error_messages.obj \
+	obj\hash_functions.obj \
+	obj\String.obj
+
+tests = test\bin\TestString.exe
+
+
+all: lib\dstruct.lib
+
+test: lib\dstruct.lib runtests
+
+runtests: $(tests)
+  ! $**  
+
+clean:
+  - @RD /S /Q lib
+  - @RD /S /Q obj
+  - @RD /S /Q test\bin
+
+lib\dstruct.lib: $(objects)
+  - @MD lib
+  LIB /OUT:$@ $**
+
+{src\}.cpp{obj\}.obj::
+  - @MD obj
+  $(CC) $(CFLAGS) /Foobj\ /c $<
+
+{test\}.cpp{test\bin\}.exe:
+  - @MD test\bin
+  $(CC) $(CFLAGS) /Z7 /Fetest\bin\ /Fotest\bin\ /MTd $< /link /NODEFAULTLIB:libcmt.lib /LIBPATH:lib dstruct.lib
