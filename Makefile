@@ -22,6 +22,7 @@ clean:
 	@rm -f src/*.o
 	@rm -rf ${DIRS}
 	@rm -f test/*.test
+	@rm -rf test/*.dSYM
 
 test:	lib/libmcl.a
 	${MAKE} -C test ${.MAKEFLAGS}
