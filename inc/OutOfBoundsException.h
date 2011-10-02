@@ -3,6 +3,8 @@
 // Copyright (c) 2007-2011, Jeffrey Hunter
 // See the LICENSE file distributed with this work for restrictions.
 
+#include <stddef.h>
+
 #include <Exception.h>
 #include <error_messages.h>
 

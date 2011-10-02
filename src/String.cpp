@@ -18,7 +18,7 @@ using namespace mcl;
 
 namespace mcl {
   // global empty string
-  StringRef EMPTY_STRING(0, "", true);
+  StringRef EMPTY_STRING(0, (char*) "", true);
 }
 
 
@@ -27,7 +27,7 @@ namespace mcl {
  */
 String::String() : ref(&EMPTY_STRING) {
   // the empty string never goes out of scope
-  acquireReference(m_ref);
+  acquireReference(ref);
 }
 
 /**
@@ -106,7 +106,7 @@ String::String(char c, size_t repeat) : ref(0) {
  * Destructor
  */
 String::~String() {
-  if (m_ref)
+  if (ref)
     release();
 }
 
@@ -144,7 +144,7 @@ size_t String::hash(const String& str) {
  *               first character is 0).
  */
 String String::substring(long offset) const {
-  return String(this, offset);
+  return String(*this, offset);
 }
 
 /**
@@ -180,7 +180,7 @@ String String::substring(long offset) const {
  *               first character is 0).
  */
 String String::substring(long offset, long len) const {
-  return String(this, offset, len);
+  return String(*this, offset, len);
 }
 
 /**
@@ -326,7 +326,7 @@ void String::assign(char c, size_t repeat) {
     release();
 
   // create a new reference
-  ref = new DStringRef(0, 0);
+  ref = new StringRef(0, 0);
   if (!ref)
     throw OutOfMemoryException();
 
