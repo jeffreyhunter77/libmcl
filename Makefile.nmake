@@ -4,7 +4,8 @@ objects = obj\error_messages.obj \
 	obj\hash_functions.obj \
 	obj\String.obj
 
-tests = test\bin\TestString.exe
+tests = test\bin\TestString.exe \
+	test\bin\TestVector.exe
 
 
 all: lib\mcl.lib

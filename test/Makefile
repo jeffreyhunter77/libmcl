@@ -2,7 +2,8 @@ CXX = g++
 CFLAGS = -I../inc -I. -g
 LDFLAGS = -L../lib -lmcl
 
-SOURCES = TestString.cpp
+SOURCES = TestString.cpp \
+	TestVector.cpp
 
 TESTS = ${SOURCES:.cpp=.test}
 

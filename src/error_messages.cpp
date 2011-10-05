@@ -8,6 +8,7 @@
 namespace mcl {
   
   const char* ERROR_MESSAGES[] = {
+    "Number too big or too small (integer wrapped around)",
     "Invalid reference count",
     "Out of memory",
     "Index out of bounds",
