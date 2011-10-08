@@ -154,13 +154,19 @@ public:
   
   // comparison routines
   bool operator==(const String& str) const { return (compare(str) == 0); }
+  bool operator!=(const String& str) const { return (compare(str) != 0); }
   bool operator<(const String& str)  const { return (compare(str) < 0); }
   bool operator>(const String& str)  const { return (compare(str) > 0); }
+  bool operator<=(const String& str)  const { return (compare(str) <= 0); }
+  bool operator>=(const String& str)  const { return (compare(str) >= 0); }
   int compare(const String& str) const;
 
   bool operator==(const char* str) const { return (compare(str) == 0); }
+  bool operator!=(const char* str) const { return (compare(str) != 0); }
   bool operator<(const char* str)  const { return (compare(str) < 0); }
   bool operator>(const char* str)  const { return (compare(str) > 0); }
+  bool operator<=(const char* str)  const { return (compare(str) <= 0); }
+  bool operator>=(const char* str)  const { return (compare(str) >= 0); }
   int compare(const char* str) const;
 
  protected:

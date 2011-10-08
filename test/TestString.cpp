@@ -236,6 +236,30 @@ void testEqualityOperator() {
 }
 
 /**
+ * operator!=() tests
+ */
+void testInequalityOperator() {
+  String foo1 = "foo";
+  String foo2 = "foo";
+  String bar = "bar";
+  
+  assert(!(foo1 != foo2));
+  assert(!(foo2 != foo1));
+  assert(foo1 != bar);
+  assert(foo2 != bar);
+  assert(bar != foo1);
+  assert(bar != foo2);
+
+  assert(!(foo1 != foo1));
+  assert(!(foo2 != foo2));
+  assert(!(bar != bar));
+  
+  assert(foo1 != "bar");
+  assert(foo2 != "bar");
+  assert(!(foo1 != "foo"));
+}
+
+/**
  * operator<() tests
  */
 void testLessThanOperator() {
@@ -272,6 +296,56 @@ void testGreaterThanOperator() {
 }
 
 /**
+ * operator<=() tests
+ */
+void testLessThanOrEqualToOperator() {
+  String foo1 = "foo";
+  String foo2 = "foo";
+  String bar = "bar";
+  
+  assert(foo1 <= foo2);
+  assert(foo2 <= foo1);
+  assert(!(foo1 <= bar));
+  assert(!(foo2 <= bar));
+  assert(bar <= foo1);
+  assert(bar <= foo2);
+  
+  assert(foo1 <= foo1);
+  assert(foo2 <= foo2);
+  assert(bar <= bar);
+  
+  assert(foo1 <= "foo");
+  assert(foo2 <= "foo");
+  assert(!(foo1 <= "bar"));
+  assert(bar <= "foo");
+}
+
+/**
+ * operator>=() tests
+ */
+void testGreaterThanOrEqualToOperator() {
+  String foo1 = "foo";
+  String foo2 = "foo";
+  String bar = "bar";
+  
+  assert(foo1 >= foo2);
+  assert(foo2 >= foo1);
+  assert(foo1 >= bar);
+  assert(foo2 >= bar);
+  assert(!(bar >= foo1));
+  assert(!(bar >= foo2));
+  
+  assert(foo1 >= foo1);
+  assert(foo2 >= foo2);
+  assert(bar >= bar);
+  
+  assert(foo1 >= "foo");
+  assert(foo2 >= "foo");
+  assert(foo1 >= "bar");
+  assert(!(bar >= "foo"));
+}
+
+/**
  * compare() tests
  */
 void testCompare() {
@@ -301,8 +375,11 @@ int main(int argc, char** argv) {
     testAssignmentOperator();
     testAssign();
     testEqualityOperator();
+    testInequalityOperator();
     testLessThanOperator();
     testGreaterThanOperator();
+    testLessThanOrEqualToOperator();
+    testGreaterThanOrEqualToOperator();
     testCompare();
 
     return 0;
